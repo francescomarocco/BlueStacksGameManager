@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluestack</title>
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/jquery.remodal.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+</head>
+
+<body onload="initLoadNoWifiPage()">
+
+<!-- container start -->
+<div class="container">
+</div>
+<!-- container end -->
+
+<!-- popup -->
+<div class="remodal" data-remodal-id="modal" data-remodal-options='{"closeOnEscape": false , "closeOnAnyClick": false}'>
+    <!-- title-step start -->
+    <div class="no-wifi">
+        <h2 class="i18n" label="no_internet"></h2>
+    </div>
+    <!-- title-step end -->
+    <div class="btn-wrap"><a href="#" id="btn-reload" class="i18n btn-continue small" label="retry" onclick="GmApi.gmReloadFailedUrl()"></a></div>
+</div>
+<!-- End Popup -->
+
+
+<!-- container end -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gmapi.js"></script>
+    <script src="js/jquery.remodal.js"></script>
+    <script type="text/javascript">
+        
+        function isInTabBar(tabBarStatus) {
+            if (tabBarStatus == "false") {
+                 $('#btn-myapps').hide();
+            }
+            $('.remodal-close').hide();
+
+            var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+            inst.open();
+            initLocalization();
+
+        }
+        
+        function initLoadNoWifiPage() {
+            GmApi.gmInTabBar("isInTabBar");
+        }
+    </script>
+
+</body>
+</html>

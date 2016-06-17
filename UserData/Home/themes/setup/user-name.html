@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluestack</title>
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gmapi.js?v=1"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+                initLocalization();
+
+            $('#name').click(function(){
+                $('#name').removeClass('highlight');
+            });
+            $("#name").keypress(function(e){
+                if(e.which == 13)
+                {
+                e.preventDefault();
+                gmSetName();
+                }
+            });
+        });
+
+      function gmSetName()
+      {
+        var name = $("#name");
+        if( $.trim(name.val()) == "" )
+        {
+            name.val("");
+            $('#name').addClass('highlight');
+            return;
+        }
+        GmApi.callCSharpHandler("setUserName", null, [name.val()]);
+        GmApi.gmStageCompleted('personalisation');
+        //location.href="user-interests.html";
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <!-- container start -->
+      <div class="container">
+        <div class="cnterDiv">
+            <!-- title-step start -->
+        <div class="title-step">
+          <h2 class="i18n" label="your_name"></h2>
+        </div>
+        <!-- title-step end -->
+        <div class="textbox">
+          <form>
+            <fieldset>
+              <input type="text" id="name">
+                <a class="clear-filed">X</a>
+            </fieldset>
+          </form>
+        </div>
+        <!--End form-->
+        <a class="i18n btn-continue" label="next" onclick="gmSetName()"></a>
+         </div> 
+        
+      </div>
+
+    <!-- container end -->
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+				//Center Search
+				jQuery.fn.center = function ()
+				{
+					this.css("margin-top", ($(window).height() / 2) - (this.outerHeight() / 2));
+					return this;
+				}
+				$('.cnterDiv').center();
+				$(window).resize(function(){
+				   $('.cnterDiv').center();
+				});
+			});
+            
+            
+			
+            
+        </script>
+  </body>
+</html>

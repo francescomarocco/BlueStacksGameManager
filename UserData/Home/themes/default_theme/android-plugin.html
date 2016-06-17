@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluestack</title>
+    <link href="css/toobler.css?v=1" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href="css/jquery.jscrollpane.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/html5shiv.min.js"></script>
+        <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.remodal.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/gmapi.js"></script>
+    <script type="text/javascript" src="js/spin.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/themes-helper.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+      
+
+    </head>
+
+    <body>
+    <!-- container start -->
+    <div class="plugin-wrapper">
+        <div class="container">        
+            <h2>While we install App Player please play these web games</h2>
+            <div class="app-screens">
+                <div class="screenshot-wrpr"><img src="img/app-screens-01.jpg" alt=""/></div>
+                <div class="screenshot-wrpr"><img src="img/app-screens-02.jpg" alt=""/></div>
+                <div class="screenshot-wrpr"><img src="img/app-screens-03.jpg" alt=""/></div>
+                <div class="screenshot-wrpr more"><a href="/" class="moreBtn">More</a></div>
+            </div>
+            <div class="app-install-wrapper">
+                <div class="install-app-icon bounceMe"><img class="gray-scale-1" src="img/install-app-icon-01.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-2" src="img/install-app-icon-02.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-3" src="img/install-app-icon-03.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-4" src="img/install-app-icon-04.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-5" src="img/install-app-icon-05.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-10" src="img/install-app-icon-06.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-10" src="img/install-app-icon-07.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-10" src="img/install-app-icon-08.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-10" src="img/install-app-icon-09.png" alt=""/></div>
+                <div class="install-app-icon progress-app"><img class="gray-scale-10" src="img/install-app-icon-10.png" alt=""/></div>
+            </div>
+            <div class="app-install-progress-wrpr">
+                <span class="installing-label">Installing App Player</span>
+                <span class="remaining-time">3:23 min </span>
+                <div class="progress-bar">
+                    <span class="completed-progress" style="width:50%;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            var timeoutHandler = null;
+            $('.progress-app').click(function(){
+                $('.progress-bar').addClass('shake-me');
+                if (timeoutHandler) clearTimeout(timeoutHandler);
+                timeoutHandler = setTimeout(function()
+                {
+                    $( ".progress-bar" ).removeClass('shake-me');
+
+                }, 1000);
+            });
+            
+            //$('.install-app-icon').addClass('bounceMe');
+            
+        });
+    </script>
+        
+</body>
+</html>

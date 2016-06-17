@@ -1,0 +1,5 @@
+notificationAppData = {"NotificationApps":[
+    {"AppName":"BoomBeach", "AppImage":"./img/boom-beach-logo.jpeg", "AppMessage":"Dr. Terror has landed."},
+    {"AppName":"Clash of Clan", "AppImage":"./img/clash-clans-logo.png", "AppMessage":"Chief, our shield is about to run out."},
+    {"AppName":"Line", "AppImage":"./img/line-logo.png", "AppMessage":"You have 1 new message."}
+]}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Game Manager</title>
+
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="js/main.js"></script>
+ 
+</head>
+
+<body>
+
+<!-- container start -->
+<div class="container">
+	<div class="cnterDiv">
+	<!-- title-bar start -->
+	<div class="title-bar">
+    	<h1 class="i18n" label="welcome"></h1>
+        <!--
+        <h2>By clicking continue, I accept the <a href="http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/bluestacks/terms/terms.html" class="">terms</a></h2>
+        -->
+    </div>
+    <!-- title-bar end -->
+    <div class="btn-wrap"><a href="#" class="i18n btn-continue" label="continue" onclick="GmApi.gmStageCompleted('terms');"></a></div>
+    </div>
+</div>
+<!-- container end -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/gmapi.js?v=1"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+                initLocalization();
+			
+			//Center Search
+            jQuery.fn.center = function ()
+            {
+                this.css("margin-top", ($(window).height() / 2) - (this.outerHeight() / 2));
+                return this;
+            }
+            $('.cnterDiv').center();
+            $(window).resize(function(){
+               $('.cnterDiv').center();
+            });
+			
+      });
+
+            
+            
+            
+  </script>
+</body>
+</html>

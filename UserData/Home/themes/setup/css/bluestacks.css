@@ -1,0 +1,230 @@
+.no-wifi {
+	display: block;
+	margin: 55px 0;
+}
+.no-wifi h2 {
+	background: url(../img/no_wifi.png) no-repeat center top;
+	padding-top: 104px;
+	text-align: center;
+	font-size: 25px;
+	color: #50505e;
+	font-weight: 100;
+	margin-bottom: 40px
+}
+.top-most{
+    z-index: 9999;
+}
+.no-apps-installed {
+	font-family: 'Oxygen', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	font-size: 40px;
+	margin: 0 0 5px 0;
+	color: #aab3ba;
+}
+.wait-app-launch {
+	display: block;
+	margin: 55px 0;
+	/*background: url(../img/wait.gif) no-repeat center bottom;*/
+}
+.wait-app-launch h2 {
+	margin-top: 40px
+	text-align: center;
+	font-size: 25px;
+	color: #50505e;
+	font-weight: 100;
+	padding-bottom: 30px;
+}
+.btn-continue.small {
+	margin-right: 25px;
+	line-height: 70px;
+	display: inline-block;
+	width: 200px;
+	height: 70px;
+	font-size: 40px;
+}
+#app_details_spinner{
+	position: relative;
+	margin-top: 25%;
+	margin-left: 50%;
+}
+.popupHead {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 25px;
+	font-weight: 100;
+	color: #8d9ba3;
+	margin-bottom: 50px;
+}
+.progressBar {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.progressBar p {
+	font-family: 'Oxygen', sans-serif;
+	font-weight: 100;
+	font-size: 16px;
+	color: #aab5bb;
+}
+.progress {
+	width: 50%;
+	display: block;
+	margin: 0px auto;
+	height: 34px;
+	padding: 2px;
+	border: solid 1px #dadfe1;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	margin-bottom: 5px;
+}
+.progress .outer {
+	overflow: hidden;
+	width: 100%;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+.progress .pcntge {
+	height: 34px;
+	display: block;
+	background: #ea3c2f;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+#spinner {
+	display: none;
+	display: inline;
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0px;
+	margin-right: -20px;
+}
+.playgameText {
+	text-align: center;
+	margin-bottom: 25px;
+}
+.playgameText .arrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin: 0 30px;
+	border-style: solid;
+	border-width: 11.5px 11px 11.5px 0;
+	border-color: transparent #aab5bb transparent transparent;
+}
+.playgameText .arrow2 {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin: 0 30px;
+	border-style: solid;
+	border-width: 11.5px 0 11.5px 11px;
+	border-color: transparent transparent transparent #aab5bb;
+}
+.playgameText h3 {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 30px;
+	display: inline-block;
+	color: #aab5bb;
+	font-weight: 100;
+}
+.customNavigation .btn {
+	position: absolute;
+	width: 75px;
+	height: 75px;
+	display: block;
+	background: #fff;
+	top: 50%;
+	margin-top: -27px;
+	opacity: 0.8;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+.customNavigation .btn.prev {
+	left: -55px;
+}
+.customNavigation .btn.next {
+	right: -55px;
+}
+.customNavigation .btn.prev:after {
+	position: absolute;
+	left: -8px;
+	top: 18px;
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	margin: 0 30px;
+	border-style: solid;
+	border-width: 18.5px 18px 18.5px 0;
+	border-color: transparent #757575 transparent transparent;
+}
+.customNavigation .btn.next:after {
+	right: -8px;
+	position: absolute;
+	top: 18px;
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	margin: 0 30px;
+	border-style: solid;
+	border-width: 18.5px 0 18.5px 18px;
+	border-color: transparent transparent transparent #757575;
+}
+@media (min-width: 1200px) {
+  .no-wifi h2 {
+    font-size: 42px;
+  }
+  .no-wifi {
+    margin: 100px 0 80px;
+  }
+  .wait-app-launch h2 {
+    font-size: 42px;
+  }
+  .wait-app-launch {
+    margin: 40px 0 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .no-wifi h2 {
+    font-size: 42px;
+  }
+  .no-wifi {
+    margin: 100px 0 80px;
+  }
+  .wait-app-launch h2 {
+    font-size: 42px;
+  }
+  .wait-app-launch {
+    margin: 40px 0 40px;
+  }
+}
+.slideStyle01 .item {
+	margin: 0 2px;
+	cursor: pointer;
+}
+.slideStyle01 .item h4 {
+	font-family: 'Oxygen', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	font-size: 12px;
+	margin: 0 0 5px 0;
+	color: #aab3ba;
+}
+.highlight {
+    -webkit-box-shadow:0 0 15px red; 
+    -moz-box-shadow: 0 0 15px red; 
+    box-shadow:0 0 15px red; .select-app ul {
+	list-style: none;
+	text-align: center;
+}
+

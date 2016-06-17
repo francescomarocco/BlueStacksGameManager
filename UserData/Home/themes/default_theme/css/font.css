@@ -1,0 +1,37 @@
+/* Custom Fonts */
+@font-face {
+    font-family: 'oxygenbold';
+    src: url('../fonts/Oxygen-Bold-webfont.eot');
+    src: url('../fonts/Oxygen-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oxygen-Bold-webfont.woff') format('woff'),
+         url('../fonts/Oxygen-Bold-webfont.svg#oxygenbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oxygenlight';
+    src: url('../fonts/Oxygen-Light-webfont.eot');
+    src: url('../fonts/Oxygen-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oxygen-Light-webfont.woff') format('woff'),
+         url('../fonts/Oxygen-Light-webfont.svg#oxygenlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'oxygenregular';
+    src: url('../fonts/Oxygen-Regular-webfont.eot');
+    src: url('../fonts/Oxygen-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oxygen-Regular-webfont.woff') format('woff'),
+         url('../fonts/Oxygen-Regular-webfont.svg#oxygenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'HelveticaNeueLight';
+    src: url('../fonts/HelveticaNeueLTPro-Lt.eot');
+    src: url('../fonts/HelveticaNeueLTPro-Lt.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/HelveticaNeueLTPro-Lt.woff') format('woff'),
+         url('../fonts/HelveticaNeueLTPro-Lt.svg#oxygenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

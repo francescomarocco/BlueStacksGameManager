@@ -1,0 +1,30 @@
+body
+{
+    min-height:600px;
+    min-width:960px;
+    width: 100%;
+    height:100%;
+}
+
+#content
+{
+    width:100%;
+    text-align: center;
+
+
+}
+
+#loading_logo
+{
+    width:10%;
+    margin-top:20%;
+}
+
+#loading_text
+{
+    font-size:180%;
+    margin-top:1em;
+    color:#8aa0ae;
+    text-align: center;
+
+}

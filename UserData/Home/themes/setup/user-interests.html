@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Game Manager</title>
+
+        <link href="css/toobler.css" rel="stylesheet">
+        <link href="css/bluestacks.css" rel="stylesheet">
+        <link href="css/font.css" rel="stylesheet">
+        <link href="css/jquery.jscrollpane.css" rel="stylesheet">
+
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/main.js?v=1"></script>
+        <script src="js/gmapi.js?v=1"></script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.min.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div class="scroller-body home-scroll">
+            <!-- container start -->
+            <div class="container">
+                <div class="cnterDiv">
+                <!-- title-step start -->
+                <div class="title-step">
+                    <h2 class="i18n" label="what_do_you_like"></h2>
+                </div>
+                <!-- title-step end -->
+                <div class="select-app">
+                    <ul class="rounded-list">
+
+                        <li class="game-app" id="game">
+                        <a href="#">
+                            <span class="img-app"></span>
+                            <span class="name-app">games</span>
+                        </a>
+                        <div class="selected"></div>
+                        </li>
+
+                        <li class="social-app" id="social">
+                        <a href="#">
+                            <span class="img-app"></span>
+                            <span class="name-app">social</span>
+                        </a>
+                        <div class="selected"></div>
+                        </li>
+
+                        <li class="media-app" id="media">
+                        <a href="#">
+                            <span class="img-app"></span>
+                            <span class="name-app">media</span>
+                        </a>
+                        <div class="selected"></div>
+                        </li>
+
+                        <li class="shop-app" id="shop">
+                        <a href="#">
+                            <span class="img-app"></span>
+                            <span class="name-app">shop</span>
+                        </a>
+                        <div class="selected"></div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- select-app end -->
+                <a href="#" class="i18n btn-continue" label="next" onclick="gmFindInterests();GmApi.gmStageCompleted('personalisation');"></a>
+                </div>
+            </div>
+        </div>
+        <!-- container end -->
+        <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+
+        <script type="text/javascript">
+			 
+            function gmFindInterests() 
+            {
+                var interests = "";
+                var list = $('.rounded-list li.active');
+                for (i = 0; i < list.length; i++) 
+                {
+                    interests += list[i].id + "##";
+                }
+
+                GmApi.callCSharpHandler("setInterests", null, [interests]);
+            }
+
+            $(document).ready(function(){
+                    //game select
+                    $('.rounded-list li').click(function(){
+                        $(this).toggleClass('active');
+                        });	
+
+                    initLocalization();
+             });
+            
+            function addingScroller(){
+             $('.scroller-body').height( $(window).height() - $('.main-header').height() );
+
+             setTimeout(function(){
+               $('.scroller-body').jScrollPane();
+             }, 100);
+        }
+
+        $(window).resize(addingScroller);
+        $(window).load(addingScroller);
+
+            $(document).ready(function() {
+				//Center Search
+				jQuery.fn.center = function ()
+				{
+					this.css("margin-top", ($(window).height() / 2) - (this.outerHeight() / 2));
+					return this;
+				}
+				$('.cnterDiv').center();
+				$(window).resize(function(){
+				   $('.cnterDiv').center();
+				});
+			});
+            
+        </script>
+
+</body>
+</html>

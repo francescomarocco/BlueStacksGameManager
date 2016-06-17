@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Game Manager</title>
+
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css?v=1" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.remodal.css">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/jquery.jscrollpane.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.min.js"></script>
+      <script type="text/javascript" src="js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.remodal.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/scrapinghelper.js"></script>
+    <script type="text/javascript" src="js/spin.js"></script>
+    <script type="text/javascript" src="js/gmapi.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/local-my-apps-helper.js"></script>
+    <script src="js/jquery-ui-1-11-4.js"></script>
+    <script src="js/jquery.ui.touch-punch.js"></script>
+    <script src="js/jquery.nicescroll.js"></script>
+
+  </head>
+
+  <body onload="initLoadLocalMyAppsPage()">
+      <div class="main-header clearfix">
+          <div id="bst-header">
+          </div>
+      </div>
+
+
+      <!-- container start -->
+      <div class="container">
+          <div class="scroller-body">
+             <div class="game-title">
+                  <h2 id="user_name" class="i18n" label="my_games"></h2>
+                  <button class="i18n editBtn" label="edit"></button>
+                  <div class="delete-app-icon-wrpr">
+                    <button class="delete-app-icon-tp"></button>
+                    <span class="delete-app-icon-hint">drag here to delete</span>
+                  </div>
+              </div>
+              <div class="my-game-app">
+                  <ul class="app-list connectedSortable sortable1" id="appsList">
+
+                  </ul>
+              </div>
+              <div id="no-apps-msg" class="i18n no-apps-installed" label="no_apps_installed">
+              </div>
+          </div>
+      </div>
+
+      <!-- popup -->
+      <div class="game-list" style="float: left;width: 50%;">
+          <a href="#" class="remodal-close" onclick="HidePopUp()"></a>
+          <div class="deleteGameBlk connectedSortable delete-app-icon-wrpr">
+          </div>
+      </div>
+      <!-- End Popup -->
+      <div class="bg-overlay"></div> 
+      <script type="text/javascript">
+          //Edit and Add Option
+          $('.editBtn').click(function(){
+              $('.app-list .editBtnBox').toggleClass('active');
+              $(this).html($(this).text() == getLocalisedString('done') ? getLocalisedString('edit') : getLocalisedString('done'));
+          });
+          //drag and trash app
+          function initLoadLocalMyAppsPage(){
+				      $( ".sortable1, .delete-app-icon-wrpr" ).sortable({
+					      connectWith: ".connectedSortable"
+					    }).disableSelection();
+				
+              $( ".sortable1, .delete-app-icon-wrpr" ).draggable();
+
+              $('.delete-app-icon-wrpr').droppable({
+                    drop: function(event, ui) {
+                        ui.draggable.remove();
+                    }
+                });
+              loadLocalApps();
+           }
+      </script>
+    </body>
+  </html>

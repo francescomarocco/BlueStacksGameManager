@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/gmapi.js"></script>
+    <script>
+      function volume(type) {
+        if (type == "systemVolume") {
+          GmApi.gmSetSystemVolume($('#level').val());
+        }
+        else {
+          GmApi.gmSetMicVolume($('#level').val());
+        }
+      }
+
+      function startStream() {
+        
+        var width = $('#width').val();
+        var height = $('#height').val();
+        var location = $('#location').val();
+        var key = $('#key').val();
+        GmApi.gmStartStream(key, location, "callbackStreamStatus");
+      }
+
+        function callbackStreamStatus(streamStatus)
+        {
+//            alert(streamStatus);
+        }
+
+    </script>
+  </head>
+  <body>
+    <center>
+      <h3>Stream Test</h3>
+      <hr/>
+      <div style="width:300px">
+        <input type="text" id="width" style="width:148px" placeholder="Enter width"/> 
+        <input type="text" style="width:148px" id="height" placeholder="Enter height"/> <br/>
+        <br/>
+        <input type="text" style="width:100%" id="location" placeholder="Enter location" /> <br/>
+        <br/>
+        <input type="text" style="width:100%" id="key" placeholder="Enter key" /> <br/>
+        <br/>
+        <button onclick="javascript:startStream();">Start</button>
+        &nbsp;
+        <button onclick="javascript:GmApi.gmStopStream();">Stop</button><br/><br/>
+      </div>
+      <hr/>
+      <div style="width:300px">
+        <input type="text" style="width:100%" id="level" placeholder="Enter level"  /> <br/>
+        <br/>
+        <button onclick="javascript:volume('systemVolume');">Set System Volume</button>
+        &nbsp;
+        <button onclick="javascript:volume('micVolume');">Set Mic Volume</button>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Game Manager</title>
+
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href="css/font.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+    function getParameterByName(name)
+    {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    </script>
+ 
+</head>
+
+<body>
+
+<!-- container start -->
+<div class="container">
+<div class="cnterDiv">
+	<!-- title-bar start -->
+	<div class="title-bar title-bar-error">
+        <h2 id="error-message"></h2>
+        <h2 id="fail-reason"></h2>
+        <h4 class="i18n" label="contact_us">Please contact us at<br><a href="http://support.bluestacks.com/hc/en-us/categories/200121727-App-Player-Windows-">www.bluestacks.com/support</a></h4>
+    </div>
+    <!-- title-bar end -->
+    <div class="btn-wrap errorPage">
+        <a href="javascript:GmApi.gmCloseCurrentTab();" class="btn-continue red">Close</a>
+    </div>
+</div>
+</div>
+<!-- container end -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/gmapi.js?v=2"></script>
+    <script type="text/javascript">
+            //Center Search
+            jQuery.fn.center = function ()
+            {
+                //this.css("position","fixed");
+                this.css("margin-top", ($(window).height() / 2) - (this.outerHeight() / 2));
+                //this.css("left", ($(window).width() / 2) - (this.outerWidth() / 2));
+                return this;
+            }
+            $('.cnterDiv').center();
+            $(window).resize(function(){
+               $('.cnterDiv').center();
+            });
+
+            var errorMessage = getParameterByName("error");
+            var reason = getParameterByName("reason");
+
+            $("#error-message").html(errorMessage);
+            $("#fail-reason").html(reason);
+        </script>
+</body>
+</html>

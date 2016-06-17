@@ -1,0 +1,23 @@
+[
+{
+	"theme_title": "Default",
+	"theme_name" : "default_theme",
+	"banner_url" : "http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/themes/default/default_theme.jpg",
+	"download_url" : "",
+	"theme_base_url" : ""
+},
+{
+	"theme_title": "Discover",
+	"theme_name" : "discover",
+	"banner_url" : "http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/themes/zip/discover/v1/discover_snapshot1.PNG",
+	"download_url" : "http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/themes/zip/discover/v1/discover.zip",
+	"theme_base_url" : ""
+},
+{
+	"theme_title": "Dark",
+	"theme_name" : "default_black",
+	"banner_url" : "http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/themes/default_black/default_black.jpg",
+	"download_url" : "http://bluestacks-cdn.s3.amazonaws.com/public/gamemanager/content/themes/zip/default_black/v1/default_black.zip",
+	"theme_base_url" : ""
+}
+]

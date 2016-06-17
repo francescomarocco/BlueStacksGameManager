@@ -1,0 +1,61 @@
+
+<div class="newSearchBar top-most clearfix">
+    <a href="home.html" class="sml-logo">Bluestack </a>
+
+    <div class="searchbox">
+        <div id="spinner"> </div>
+        <div class="vrFlw">
+            <input id="searchbox" type="search" placeholder="Search">
+            <button class='btn-search'>Search</button>
+        </div>
+
+        <!-- Recent Search Apps Dropdown -->
+        <div class="recentApps">
+            <div class="scllBarDrpdwn">
+            </div>
+        </div>
+        <!-- End Reccent Search Apps Dropdown -->
+    </div>
+
+    <div class="head-apps settings">
+        <i class="app-icon-settings"></i>
+		<span>settings</span>
+        <div class="dropDown dropDown2">
+        </div>
+    </div>
+
+    <a href="home.html" class="head-apps">
+        <i class="app-icon-01 app-icon-home"></i>
+        <span class="i18n" label="top_apps">top apps</span>
+        <div class="i18n dropDown" label="top_apps">
+        
+        </div>
+    </a>
+
+    <a href="local-my-apps.html" class="head-apps">
+        <i class="app-icon-02 app-icon-my-apps"></i>
+        <span class="i18n" label="my_games">my games</span>
+        <div class="i18n dropDown" label="my_games">
+        
+        </div>
+    </a>
+
+    <!-- <a href="#" onclick="GmApi.gmShowFonelink();" class="head-apps">
+        <i class="app-icon-fone"></i>
+        
+        <div class="i18n dropDown" label="link_phone">
+        </div>
+    </a> -->
+
+</div>
+<script>
+    $('#searchbox').keyup(function(e){
+        if(e.which == 13){
+            UTILS.submitSearch();
+            e.preventDefault();
+        }
+    });
+    $('.btn-search').click(function(e){
+        UTILS.submitSearch();
+    });
+</script>

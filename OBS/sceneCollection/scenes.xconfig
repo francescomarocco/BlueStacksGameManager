@@ -1,0 +1,102 @@
+scenes : {
+  Scene : {
+    class : Scene
+    sources : {
+      watermark : {
+        render : 1
+        class : BitmapImageSource
+        data : {
+          path : ..\Assets\Common\btv_watermark.png
+          opacity : 100
+          color : -1
+          useColorKey : 0
+          keyColor : -1
+          keySimilarity : 10
+          keyBlend : 0
+          monitor : 0
+        }
+        cx : 256
+        cy : 64
+        x : 512
+        y : 0
+      }
+      BlueStacksWebcam : {
+        render : 0
+        class : DeviceCaptureTemp
+        data : {
+          deinterlacingGPU : 1
+          device : temp
+          deviceName : temp
+          deviceID : temp
+          customResolution : 1
+          scaleFactor_x : 320
+          scaleFactor_y : 240
+          resolutionWidth : 320
+          resolutionHeight : 240
+          frameInterval : 333333
+          flipImage : 0
+          flipImageHorizontal : 0
+          usePointFiltering : 0
+          gamma : 100
+          preserveSourceSize : 0
+          deinterlacingType : 0
+          deinterlacingFieldOrder : 0
+          deinterlacingProcessor : 1
+          deinterlacingDoublesFramerate : 0
+          fullrange : 0
+          colorspace : 0
+          opacity : 100
+          usePreferredType : 0
+          preferredType : 17
+          useBuffering : 0
+          bufferTime : 0
+          audioDevice : Disable
+          audioDeviceName : Disable
+          audioDeviceID : Disabled
+          forceCustomAudioDevice : 1
+          soundOutputType : 1
+          soundTimeOffset : 0
+          volume : 1
+          useAudioRender : 0
+          useChromaKey : 0
+          keyColor : -1
+          keySimilarity : 0
+          keyBlend : 80
+          keySpillReduction : 50
+        }
+        cx : 320
+        cy : 240
+        y : 840
+        x : 1600
+      }
+      BlueStacks : {
+        render : 1
+        class : WindowCaptureSource
+        data : {
+          captureType : 1
+          monitor : 0
+          window : Bluestacks App Player
+          windowClass : WindowsForms10.Window.8.app.0.33c0d9d
+          innerWindow : 1
+          regionCapture : 0
+          captureMouse : 1
+          captureLayered : 0
+          compatibilityMode : 0
+          usePointFiltering : 0
+          captureX : 1
+          captureY : 39
+          captureCX : 1280
+          captureCY : 720
+          useColorKey : 0
+          keyColor : -1
+          keySimilarity : 10
+          keyBlend : 0
+          opacity : 100
+          gamma : 100
+        }
+        cx : 2402
+        cy : 1248
+      }
+    }
+  }
+}

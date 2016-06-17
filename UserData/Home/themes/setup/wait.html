@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluestack</title>
+    <link href="css/toobler.css" rel="stylesheet">
+    <link href="css/bluestacks.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/jquery.remodal.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/gmapi.js?v=1"></script>
+    <script src="js/main.js?v=1"></script>
+    <script src="js/jquery.remodal.js"></script>
+    <script type="text/javascript">
+
+function loadWait()
+{
+    initLocalization();
+    //alert("callbacked");
+    textArray = ["please_wait","load_data","one_moment"];
+    style = urlParam("style");
+    var text = urlParam('message');
+    if(isEmpty(text))
+    {
+        var messageIndex = 0;
+        text = textArray[messageIndex];
+        var id = setInterval(function() {
+            messageIndex++;
+            text = textArray[messageIndex];
+            if(messageIndex === 2)
+            {
+                clearInterval(id);
+            }
+            text = getLocalizedString(text);
+            setMessage(text);
+        }, 10000);
+    }
+    //alert("getLocal");
+    setStyle(style);
+
+    $('.remodal-close').hide();
+
+    // Loading Animation
+    function loop() {
+        $('.waitLoader .bluebox').css({left:0});
+        $('.waitLoader .bluebox').animate ({
+            left: '+=100%',
+        }, 2500, 'linear', function() {
+            loop();
+        });
+
+        if(window.STYLE == "marquee")
+        {
+            $('.waitLoader > span').css({left:0});
+            $('.waitLoader > span').animate ({
+                left: '+=130%',
+            }, 2500, 'linear', function() {
+                loop();
+            });
+        }
+    }
+    loop();
+
+    var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+    inst.open();
+}
+
+function localizedAndCallback()
+{   
+    text = "get_started";
+    text = getLocalizedString(text);
+    setMessage(text);
+};
+
+function urlParam(name, url){
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function setProgress(progress)
+{
+
+    var element = $('.waitLoader span');
+    element.css('width', progress+"%");
+}
+
+function setMessage(message)
+{
+    $('.wait-app-launch h2').html(message);
+}
+
+function setStyle(p_style)
+{
+    window.STYLE = p_style;
+    var element = $('.waitLoader span');
+    if(window.STYLE == "marquee")
+    {
+        element.css('width', "155px");
+        element.css('margin-left', "-155px");
+    }
+    else
+    {
+        setProgress("0");
+        element.css('margin-left', '');
+        element.css('left', '0');
+    }
+}
+
+function isEmpty(str) {
+    if(str == null || str == undefined || str.length == 0)
+        return true;
+}
+
+    </script>
+</head>
+
+<body onload="loadWait()">
+
+<!-- container start -->
+<div class="container">
+</div>
+<!-- container end -->
+
+<!-- popup -->
+<div class="remodal" data-remodal-id="modal" data-remodal-options='{"closeOnEscape": false , "closeOnAnyClick": false}'>
+    <!-- title-step start -->
+    <div class="wait-app-launch">
+        <h2></h2>
+        <div class="waitLoader">
+        	<span style="width:0px;"><em class="bluebox"></em></span>
+        </div>
+    </div>
+    <!-- title-step end -->
+</div>
+<!-- End Popup -->
+
+
+<!-- container end -->
+   
+</body>
+</html>
